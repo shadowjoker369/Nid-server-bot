@@ -4,7 +4,7 @@ from flask import Flask, request
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 API_BASE_URL = os.environ.get("DATA_API_URL")  # শুধু base URL
-WEBHOOK_URL = f"https://আপনার-render-ডোমেইন/{BOT_TOKEN}"
+WEBHOOK_URL = f"https://nid-server-bot.onrender.com/{BOT_TOKEN}"
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
 
 app = Flask(__name__)
@@ -82,4 +82,5 @@ def set_webhook():
 if __name__ == "__main__":
     set_webhook()
     port = int(os.environ.get("PORT", 5000))
+
     app.run(host="0.0.0.0", port=port)
